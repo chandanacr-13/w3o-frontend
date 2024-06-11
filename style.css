@@ -1,0 +1,176 @@
+/* Part 1: CSS Colors and Backgrounds */
+
+/* Theme Colors */
+:root {
+    --primary-color: #62618b; /* Hexadecimal */
+    --secondary-color: rgb(41, 128, 185); /* RGB */
+    --background-color: #ecf0f1; /* Named color */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+}
+
+/* Backgrounds */
+.hero-section {
+    background: url('/unnamed.webp') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+   
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style:none;
+    margin: 2px;
+    padding: 2px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Part 2: CSS Borders and Fonts */
+
+/* Borders */
+.menu-section {
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.profile img {
+    border-radius: 60%;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Fonts */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 2.5em; /* em */
+}
+
+h2 {
+    font-size: 2em; /* em */
+}
+
+h3 {
+    font-size: 1.5em; /* em */
+}
+
+/* Part 3: CSS Cursor Styles */
+
+a:hover {
+    cursor: pointer;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Part 4: Understanding z-index */
+
+.hero-section {
+    position: relative;
+    z-index: 1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Part 5: Units in CSS */
+
+/* Responsive Layout */
+.navbar {
+    padding: 1rem; /* rem */
+}
+
+.menu-section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.profile {
+    text-align: center;
+    margin: 20px 0;
+}
+
+form {
+    width: 70%;
+    margin: 0 auto;
+}
+footer{
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .navbar ul {
+        justify-content: space-around;
+    }
+
+    .hero-section {
+        padding: 150px 20px;
+    }
+
+    .menu-section {
+        width: 60%;
+    }
+
+    form {
+        width: 70%;
+    }
+}
